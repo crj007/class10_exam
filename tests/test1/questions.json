@@ -1,12 +1,12 @@
 [
   {
-    "question": "What is the full form of CPU?",
-    "options": ["Central Process Unit", "Central Processing Unit", "Control Process Unit", "Computer Processing Unit"],
-    "answer": "Central Processing Unit"
+    "question": "What does CPU stand for?",
+    "options": ["Central Process Unit", "Central Processing Unit", "Computer Personal Unit", "Central Processor Utility"],
+    "answer": 1
   },
   {
-    "question": "Which one is not an input device?",
-    "options": ["Keyboard", "Mouse", "Monitor", "Microphone"],
-    "answer": "Monitor"
+    "question": "What is RAM used for?",
+    "options": ["Permanent storage", "Processing", "Temporary storage", "Input"],
+    "answer": 2
   }
 ]
