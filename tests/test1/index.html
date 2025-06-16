@@ -1,99 +1,156 @@
-
-<!-- Placeholder test file -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Class 10 CS Test 1</title>
+  <title>Class 10 Online Test</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f8f8f8; }
-    .container { max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h2 { color: #333; }
-    .hidden { display: none; }
-    .question { margin-bottom: 20px; }
-    .btn { background: #3498db; color: white; padding: 10px 15px; border: none; cursor: pointer; margin-top: 20px; border-radius: 5px; }
-    .btn:hover { background: #2980b9; }
-    label { display: block; margin: 5px 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 5% auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    input, button, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #1c5984;
+    }
+
+    .question {
+      margin-top: 30px;
+    }
+
+    .option {
+      margin: 8px 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .thanks {
+      text-align: center;
+      font-size: 20px;
+      color: green;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-<div class="container">
-  <div id="login">
-    <h2>Login to Start Test</h2>
-    <input type="text" id="roll" placeholder="Enter Roll Number" />
-    <button class="btn" onclick="login()">Login</button>
-    <p id="loginError" style="color:red;"></p>
+
+  <div class="container">
+    <div id="login-box">
+      <h1>Class 10 Test Login</h1>
+      <input type="text" id="name" placeholder="Enter Full Name">
+      <input type="password" id="password" placeholder="Enter Password (e.g., partha_13)">
+      <button onclick="checkLogin()">Login</button>
+      <p id="login-error" style="color:red; display:none;">Invalid login. Please try again.</p>
+    </div>
+
+    <div id="test-box" class="hidden">
+      <h1>Welcome, <span id="student-name"></span> 👋</h1>
+      <form id="test-form"></form>
+      <button onclick="submitTest()">Submit</button>
+    </div>
+
+    <div id="thanks-box" class="hidden thanks">
+      ✅ Thank you! Your answers have been submitted.
+    </div>
   </div>
 
-  <div id="quiz" class="hidden">
-    <h2>Test</h2>
-    <form id="quizForm"></form>
-    <button class="btn" onclick="submitTest()">Submit</button>
-  </div>
+  <script>
+    let students = [];
+    let questions = [];
 
-  <div id="thankyou" class="hidden">
-    <h2>Thank you!</h2>
-    <p>Your answers have been submitted.</p>
-  </div>
-</div>
+    // Load student and question data
+    async function loadData() {
+      const sRes = await fetch("students.json");
+      students = await sRes.json();
 
-<script>
-let studentRoll = "";
-let studentName = "";
-let questions = [];
+      const qRes = await fetch("questions.json");
+      questions = await qRes.json();
+    }
 
-async function login() {
-  const roll = document.getElementById("roll").value.trim();
-  const res = await fetch("students.json");
-  const students = await res.json();
+    function checkLogin() {
+      const name = document.getElementById('name').value.trim().toLowerCase();
+      const password = document.getElementById('password').value.trim().toLowerCase();
 
-  const found = students.find(s => s.roll === roll);
-  if (!found) {
-    document.getElementById("loginError").textContent = "Roll number not found.";
-    return;
-  }
+      const student = students.find(s => 
+        s.name.toLowerCase() === name && password === `${name}_${s.roll}`
+      );
 
-  studentRoll = found.roll;
-  studentName = found.name;
+      if (student) {
+        document.getElementById("login-box").classList.add("hidden");
+        document.getElementById("test-box").classList.remove("hidden");
+        document.getElementById("student-name").innerText = student.name;
 
-  document.getElementById("login").classList.add("hidden");
-  document.getElementById("quiz").classList.remove("hidden");
-  loadQuestions();
-}
+        renderQuestions();
+      } else {
+        document.getElementById("login-error").style.display = 'block';
+      }
+    }
 
-async function loadQuestions() {
-  const res = await fetch("questions.json");
-  questions = await res.json();
-  const form = document.getElementById("quizForm");
-  form.innerHTML = "";
+    function renderQuestions() {
+      const form = document.getElementById("test-form");
+      questions.forEach((q, i) => {
+        const div = document.createElement("div");
+        div.className = "question";
+        div.innerHTML = `<strong>Q${i+1}: ${q.question}</strong>`;
+        q.options.forEach(opt => {
+          const id = `q${i}_${opt}`;
+          div.innerHTML += `
+            <div class="option">
+              <input type="radio" id="${id}" name="q${i}" value="${opt}">
+              <label for="${id}">${opt}</label>
+            </div>`;
+        });
+        form.appendChild(div);
+      });
+    }
 
-  questions.forEach((q, i) => {
-    const div = document.createElement("div");
-    div.className = "question";
-    div.innerHTML = `<strong>Q${i+1}. ${q.question}</strong><br>` +
-      q.options.map(opt => `<label><input type='radio' name='q${i}' value='${opt}'> ${opt}</label>`).join("");
-    form.appendChild(div);
-  });
-}
+    function submitTest() {
+      const answers = {};
+      questions.forEach((q, i) => {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        answers[`Q${i+1}`] = selected ? selected.value : "Not Attempted";
+      });
+      console.log("Answers:", answers); // For now, just log
+      document.getElementById("test-box").classList.add("hidden");
+      document.getElementById("thanks-box").classList.remove("hidden");
+    }
 
-function submitTest() {
-  const formData = new FormData(document.getElementById("quizForm"));
-  const answers = [];
-
-  for (let i = 0; i < questions.length; i++) {
-    answers.push({
-      question: questions[i].question,
-      selected: formData.get(`q${i}`) || "Not answered"
-    });
-  }
-
-  // Example log (you’ll replace this with Google Sheets logic later)
-  console.log("Student:", studentRoll, studentName);
-  console.log("Answers:", answers);
-
-  document.getElementById("quiz").classList.add("hidden");
-  document.getElementById("thankyou").classList.remove("hidden");
-}
-</script>
+    // Load data on page load
+    loadData();
+  </script>
 </body>
 </html>
