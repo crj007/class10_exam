@@ -1,12 +1,52 @@
 [
   {
-    "question": "What does CPU stand for?",
-    "options": ["Central Process Unit", "Central Processing Unit", "Computer Personal Unit", "Central Processor Utility"],
-    "answer": 1
+    "question": "What does HTML stand for?",
+    "options": ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language", "Hyperlink Text Management Language"],
+    "answer": "Hyper Text Markup Language"
   },
   {
-    "question": "What is RAM used for?",
-    "options": ["Permanent storage", "Processing", "Temporary storage", "Input"],
-    "answer": 2
+    "question": "Which of the following is an input device?",
+    "options": ["Monitor", "Printer", "Mouse", "Speaker"],
+    "answer": "Mouse"
+  },
+  {
+    "question": "Which protocol is used to transfer web pages?",
+    "options": ["FTP", "SMTP", "HTTP", "TCP"],
+    "answer": "HTTP"
+  },
+  {
+    "question": "Which memory is non-volatile?",
+    "options": ["RAM", "Cache", "Register", "ROM"],
+    "answer": "ROM"
+  },
+  {
+    "question": "What is the full form of CPU?",
+    "options": ["Central Performance Unit", "Computer Processing Unit", "Central Processing Unit", "Control Program Unit"],
+    "answer": "Central Processing Unit"
+  },
+  {
+    "question": "Which tag is used for a line break in HTML?",
+    "options": ["<br>", "<lb>", "<break>", "<line>"],
+    "answer": "<br>"
+  },
+  {
+    "question": "Which storage device is fastest?",
+    "options": ["CD-ROM", "Hard Disk", "SSD", "RAM"],
+    "answer": "RAM"
+  },
+  {
+    "question": "Which language is used to style web pages?",
+    "options": ["HTML", "Python", "CSS", "C++"],
+    "answer": "CSS"
+  },
+  {
+    "question": "Which of the following is NOT a programming language?",
+    "options": ["Python", "Java", "Linux", "C#"],
+    "answer": "Linux"
+  },
+  {
+    "question": "Which component stores data permanently?",
+    "options": ["RAM", "CPU", "Cache", "Hard Drive"],
+    "answer": "Hard Drive"
   }
 ]
