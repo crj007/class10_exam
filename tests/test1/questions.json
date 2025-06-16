@@ -1,12 +1,14 @@
-{
-    "question": "Which language is used to build web pages?",
-    "options": ["Python", "HTML", "C++", "Java"]
+[
+  {
+    "question": "What is the output of 2 + 2?",
+    "options": ["3", "4", "5"]
   },
   {
-    "question": "Which storage is volatile?",
-    "options": ["ROM", "SSD", "RAM", "HDD"]
+    "question": "Which language is used for web development?",
+    "options": ["Python", "HTML", "C++"]
   },
   {
     "question": "What does CPU stand for?",
-    "options": ["Central Process Unit", "Central Processing Unit", "Control Processing Unit", "Central Program Unit"]
+    "options": ["Central Program Unit", "Central Processing Unit", "Control Processing Unit"]
   }
+]
