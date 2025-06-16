@@ -25,10 +25,10 @@
     "answer": "Central Processing Unit"
   },
   {
-    "question": "Which tag is used for a line break in HTML?",
-    "options": ["<br>", "<lb>", "<break>", "<line>"],
-    "answer": "<br>"
-  },
+    "question": "Which type of computer virus spreads by attaching itself to executable files?",
+    "options": ["Macro Virus", "File Infector Virus", "Boot Sector Virus", "Polymorphic Virus"],
+    "answer": "File Infector Virus"
+},
   {
     "question": "Which storage device is fastest?",
     "options": ["CD-ROM", "Hard Disk", "SSD", "RAM"],
