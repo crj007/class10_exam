@@ -1,153 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class 10 CS Online Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Login - Test 1</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #4e54c8, #8f94fb);
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      color: #333;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
     }
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      max-width: 600px;
-      width: 100%;
-    }
-    h1, h2 {
+
+    .login-box {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
       text-align: center;
+      width: 300px;
     }
-    input[type="text"], input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    button {
-      padding: 12px 24px;
-      background: #00acc1;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
-    }
-    .question-block {
+
+    .login-box h2 {
       margin-bottom: 20px;
+      font-size: 28px;
     }
-    .question-block h3 {
-      margin-bottom: 10px;
+
+    input[type="text"],
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      outline: none;
     }
-    .options label {
-      display: block;
-      margin-bottom: 5px;
+
+    button {
+      width: 95%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #00c9ff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+      transition: 0.3s;
     }
-    .hidden { display: none; }
-    .result-box {
-      text-align: center;
-      font-size: 1.2em;
-      margin-top: 20px;
+
+    button:hover {
+      background-color: #b2fefa;
+    }
+
+    .error {
+      margin-top: 10px;
+      color: #ff4d4d;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="container" id="login-container">
-    <h1>Class 10 CS Test</h1>
-    <input type="text" id="username" placeholder="Enter your first name">
-    <input type="password" id="password" placeholder="Enter password">
+  <div class="login-box">
+    <h2>Class 10 CS - Test 1</h2>
+    <input type="text" id="username" placeholder="Enter First Name" />
+    <input type="password" id="password" placeholder="Enter Password" />
     <button onclick="login()">Login</button>
-    <p id="login-error" style="color:red;"></p>
-  </div>
-
-  <div class="container hidden" id="quiz-container">
-    <h2 id="welcome"></h2>
-    <div id="quiz"></div>
-    <button onclick="submitQuiz()">Submit</button>
-  </div>
-
-  <div class="container hidden" id="result-container">
-    <h2>Result</h2>
-    <div class="result-box" id="score"></div>
+    <div id="error" class="error"></div>
   </div>
 
   <script>
-    let studentData = {};
-    let questions = [];
-    let currentUser = "";
+    async function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorDiv = document.getElementById("error");
 
-    async function loadData() {
-      const studentRes = await fetch('students.json');
-      const questionRes = await fetch('questions.json');
-      studentData = await studentRes.json();
-      questions = await questionRes.json();
-    }
+      try {
+        const response = await fetch("students.json");
+        const students = await response.json();
 
-    function login() {
-      const user = document.getElementById("username").value.trim().toLowerCase();
-      const pass = document.getElementById("password").value;
+        const student = students.find(s => s.name.toLowerCase() === username.toLowerCase() && s.password === password);
 
-      const match = studentData.find(s => s.name.toLowerCase() === user && pass === "12345");
-      if (!match) {
-        document.getElementById("login-error").textContent = "Invalid login details.";
-        return;
+        if (student) {
+          localStorage.setItem("studentName", student.name);
+          localStorage.setItem("studentRoll", student.roll);
+          window.location.href = "test1.html";
+        } else {
+          errorDiv.textContent = "Invalid name or password!";
+        }
+      } catch (error) {
+        errorDiv.textContent = "Error loading student data.";
       }
-      currentUser = match.name;
-      document.getElementById("login-container").classList.add("hidden");
-      document.getElementById("quiz-container").classList.remove("hidden");
-      document.getElementById("welcome").textContent = `Welcome, ${currentUser}`;
-      renderQuestions();
     }
-
-    function renderQuestions() {
-      const quizDiv = document.getElementById("quiz");
-      questions.forEach((q, idx) => {
-        const qBlock = document.createElement("div");
-        qBlock.className = "question-block";
-        qBlock.innerHTML = `<h3>Q${idx + 1}: ${q.question}</h3>`;
-
-        const options = document.createElement("div");
-        options.className = "options";
-        q.options.forEach(opt => {
-          const label = document.createElement("label");
-          label.innerHTML = `<input type='radio' name='q${idx}' value='${opt}'> ${opt}`;
-          options.appendChild(label);
-        });
-
-        qBlock.appendChild(options);
-        quizDiv.appendChild(qBlock);
-      });
-    }
-
-    function submitQuiz() {
-      let correct = 0, incorrect = 0;
-      questions.forEach((q, idx) => {
-        const selected = document.querySelector(`input[name=q${idx}]:checked`);
-        if (selected && selected.value === q.answer) correct++;
-        else incorrect++;
-      });
-
-      const total = questions.length;
-      document.getElementById("quiz-container").classList.add("hidden");
-      document.getElementById("result-container").classList.remove("hidden");
-      document.getElementById("score").innerHTML = `
-        <p>Total Questions: ${total}</p>
-        <p>Correct Answers: ${correct}</p>
-        <p>Incorrect Answers: ${incorrect}</p>
-        <p><strong>Total Marks: ${correct} / ${total}</strong></p>
-      `;
-    }
-
-    loadData();
   </script>
 </body>
 </html>
