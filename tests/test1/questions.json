@@ -1,0 +1,12 @@
+{
+    "question": "Which language is used to build web pages?",
+    "options": ["Python", "HTML", "C++", "Java"]
+  },
+  {
+    "question": "Which storage is volatile?",
+    "options": ["ROM", "SSD", "RAM", "HDD"]
+  },
+  {
+    "question": "What does CPU stand for?",
+    "options": ["Central Process Unit", "Central Processing Unit", "Control Processing Unit", "Central Program Unit"]
+  }
