@@ -1,13 +1,15 @@
-{ "roll": "1", "name": "Aayush Dhirasaria" },
-  { "roll": "2", "name": "Arham Zulfiquar" },
-  { "roll": "3", "name": "Aryan Agarwalla" },
-  { "roll": "6", "name": "Avikshit Aditya" },
-  { "roll": "4", "name": "Ayush Roy" },
-  { "roll": "10", "name": "Jugaad Singh" },
-  { "roll": "11", "name": "Krishna Periwal" },
-  { "roll": "13", "name": "Partha P Sharma" },
-  { "roll": "14", "name": "Prapti Neog" },
-  { "roll": "17", "name": "SaiKripa Roy" },
-  { "roll": "18", "name": "Samriddhi krori" },
-  { "roll": "20", "name": "Sanskriti Dee Oleyman" },
-  { "roll": "22", "name": "Yash Munot" }
+[
+  {"roll": 1, "name": "aayush dhirasaria"},
+  {"roll": 2, "name": "arham zulfiquar"},
+  {"roll": 3, "name": "aryan agarwalla"},
+  {"roll": 6, "name": "avikshit aditya"},
+  {"roll": 4, "name": "ayush roy"},
+  {"roll": 10, "name": "jugaad singh"},
+  {"roll": 11, "name": "krishna periwal"},
+  {"roll": 13, "name": "partha p sharma"},
+  {"roll": 14, "name": "prapti neog"},
+  {"roll": 17, "name": "saikripa roy"},
+  {"roll": 18, "name": "samriddhi krori"},
+  {"roll": 20, "name": "sanskriti dee oleyman"},
+  {"roll": 22, "name": "yash munot"}
+]
