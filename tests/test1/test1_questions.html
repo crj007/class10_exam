@@ -1,135 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>MCQ Test</title>
+  <meta charset="UTF-8">
+  <title>Test 1 - Class 10 CS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial;
-      background: #f4f4f4;
-      padding: 40px;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f8fc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
     }
-    .question-box {
+    .question-card {
       background: white;
-      padding: 30px;
+      padding: 20px;
       border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 0 10px #ccc;
-      width: 80%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
       max-width: 600px;
+      margin-bottom: 20px;
     }
     .options label {
       display: block;
-      margin: 10px 0;
-      text-align: left;
-      cursor: pointer;
+      margin: 8px 0;
     }
     button {
-      margin: 20px 10px 0;
       padding: 10px 20px;
-      font-size: 16px;
+      border: none;
+      background-color: #667eea;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
     }
-    #status {
-      margin-top: 10px;
-      font-size: 14px;
+    .summary {
+      font-size: 1.2em;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <div class="question-box">
-    <h3 id="question-number">Question</h3>
-    <p id="question-text"></p>
-    <form class="options" id="options-form"></form>
-    <div>
-      <button onclick="prevQuestion()" id="prev-btn" disabled>Previous</button>
-      <button onclick="nextQuestion()" id="next-btn">Next</button>
-    </div>
-    <div id="status"></div>
+  <div class="question-card" id="quiz-box">
+    <h2 id="question-title">Loading question...</h2>
+    <div class="options" id="options-box"></div>
+    <button onclick="submitAnswer()">Submit</button>
   </div>
+
+  <div class="summary" id="summary" style="display:none;"></div>
 
   <script>
     let questions = [];
     let current = 0;
-    let answers = {};
+    let correct = 0;
+    let incorrect = 0;
 
-    const user = new URLSearchParams(window.location.search).get("user");
-    const roll = new URLSearchParams(window.location.search).get("roll");
+    async function loadQuestions() {
+      const res = await fetch('questions.json');
+      questions = await res.json();
+      showQuestion();
+    }
 
-    fetch("questions.json")
-      .then(res => res.json())
-      .then(data => {
-        questions = data;
-        loadQuestion();
-      });
-
-    function loadQuestion() {
+    function showQuestion() {
       const q = questions[current];
-      document.getElementById("question-number").innerText = `Question ${current + 1} of ${questions.length}`;
-      document.getElementById("question-text").innerText = q.question;
-
-      const form = document.getElementById("options-form");
-      form.innerHTML = "";
-
-      q.options.forEach((opt, idx) => {
-        const id = `opt-${idx}`;
-        const isChecked = answers[current] === opt ? "checked" : "";
-        form.innerHTML += `
-          <label>
-            <input type="radio" name="option" value="${opt}" ${isChecked}>
-            ${opt}
-          </label>
-        `;
-      });
-
-      document.getElementById("prev-btn").disabled = current === 0;
-      document.getElementById("next-btn").innerText = current === questions.length - 1 ? "Submit" : "Next";
+      document.getElementById('question-title').textContent = `Q${current+1}. ${q.question}`;
+      const optionsHTML = q.options.map((opt, i) => `
+        <label><input type="radio" name="option" value="${opt}"/> ${opt}</label>
+      `).join('');
+      document.getElementById('options-box').innerHTML = optionsHTML;
     }
 
-    function nextQuestion() {
-      saveAnswer();
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="option"]:checked');
+      if (!selected) return alert("Please select an option!");
 
-      if (current < questions.length - 1) {
-        current++;
-        loadQuestion();
+      const answer = questions[current].answer;
+      if (selected.value === answer) correct++;
+      else incorrect++;
+
+      current++;
+      if (current < questions.length) {
+        showQuestion();
       } else {
-        submitTest();
+        document.getElementById('quiz-box').style.display = 'none';
+        document.getElementById('summary').style.display = 'block';
+        document.getElementById('summary').innerHTML = `
+          <h3>Test Complete!</h3>
+          <p>Total Questions: ${questions.length}</p>
+          <p>Correct Answers: ${correct}</p>
+          <p>Incorrect Answers: ${incorrect}</p>
+          <p>Total Marks: ${correct} / ${questions.length}</p>
+        `;
       }
     }
 
-    function prevQuestion() {
-      saveAnswer();
-      if (current > 0) {
-        current--;
-        loadQuestion();
-      }
-    }
-
-    function saveAnswer() {
-      const selected = document.querySelector("input[name='option']:checked");
-      if (selected) {
-        answers[current] = selected.value;
-      }
-    }
-
-    function submitTest() {
-      saveAnswer();
-
-      let score = 0;
-      for (let i = 0; i < questions.length; i++) {
-        if (answers[i] === questions[i].answer) {
-          score++;
-        }
-      }
-
-      document.body.innerHTML = `
-        <div class="question-box">
-          <h2>Thank you, ${user}!</h2>
-          <p>You scored ${score} out of ${questions.length}.</p>
-          <p>Roll No: ${roll}</p>
-        </div>
-      `;
-    }
+    loadQuestions();
   </script>
 </body>
 </html>
