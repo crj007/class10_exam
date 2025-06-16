@@ -21,6 +21,11 @@
     h1 {
       color: #2c3e50;
     }
+    .welcome {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #2d3436;
+    }
     .question {
       font-size: 1.2em;
       margin: 20px 0;
@@ -59,6 +64,7 @@
 <body>
   <div class="container">
     <h1>Computer Science Test 1</h1>
+    <div class="welcome" id="welcomeBox"></div>
     <div id="quizBox">
       <div id="questionBox"></div>
       <form id="optionsForm" class="options"></form>
@@ -71,6 +77,8 @@
     const studentName = localStorage.getItem("studentName");
     if (!studentName) {
       window.location.href = "index.html";
+    } else {
+      document.getElementById("welcomeBox").innerText = `Welcome, ${studentName}!`;
     }
 
     let questions = [];
@@ -85,7 +93,7 @@
         showQuestion();
       })
       .catch(err => {
-        document.getElementById("quizBox").innerHTML = "Failed to load questions.";
+        document.getElementById("quizBox").innerHTML = "❌ Failed to load questions.";
       });
 
     function showQuestion() {
