@@ -1,127 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Class 10 CS Test</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f7fa;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
+
     .container {
-      max-width: 800px;
-      margin: 50px auto;
-      background: #fff;
+      background: white;
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 30px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 600px;
     }
-    h1 {
+
+    h2, h3 {
       text-align: center;
-      color: #2c3e50;
+      color: #333;
     }
-    .question {
-      margin-bottom: 25px;
+
+    .question-box {
+      margin-top: 1.5rem;
     }
-    .question h3 {
-      color: #34495e;
-    }
-    .options label {
-      display: block;
-      margin-bottom: 8px;
+
+    .option {
+      background: #f9f9f9;
+      padding: 10px 15px;
+      margin: 8px 0;
+      border-radius: 8px;
       cursor: pointer;
+      transition: 0.3s;
+      border: 1px solid #ddd;
     }
-    .submit-btn {
-      display: block;
-      margin: 30px auto 0;
-      padding: 12px 24px;
-      background-color: #2ecc71;
-      color: #fff;
+
+    .option:hover {
+      background: #dceffd;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #0077cc;
+      color: white;
       border: none;
-      border-radius: 6px;
-      font-size: 16px;
+      border-radius: 8px;
+      font-size: 1rem;
       cursor: pointer;
-      transition: 0.3s ease;
+      margin-top: 1rem;
     }
-    .submit-btn:hover {
-      background-color: #27ae60;
+
+    .hidden {
+      display: none;
     }
-    .result {
+
+    #result-box {
       text-align: center;
-      margin-top: 30px;
-      font-size: 18px;
-      color: #2c3e50;
+    }
+
+    .login {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .correct {
+      background-color: #c8f7c5;
+    }
+
+    .wrong {
+      background-color: #ffc8c8;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Computer Science Test</h1>
-    <div id="quiz-container"></div>
-    <button class="submit-btn" onclick="submitQuiz()">Submit</button>
-    <div class="result" id="result"></div>
+    <div id="login-box">
+      <h2>Class 10 CS Test</h2>
+      <div class="login">
+        <input type="text" id="username" placeholder="Enter First Name">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+      </div>
+    </div>
+
+    <div id="quiz-box" class="hidden">
+      <h3 id="question">Question text</h3>
+      <div id="options"></div>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div id="result-box" class="hidden">
+      <h2>Quiz Completed!</h2>
+      <p id="result"></p>
+    </div>
   </div>
 
   <script>
-    const questions = [];
-    let answers = {};
+    const students = [
+      "Aayush", "Arham", "Aryan", "Avikshit", "Ayush", "Jugaad", "Krishna",
+      "Partha", "Prapti", "SaiKripa", "Samriddhi", "Sanskriti", "Yash"
+    ];
 
-    fetch("questions.json")
-      .then((res) => res.json())
-      .then((data) => {
-        questions.push(...data);
-        renderQuestions();
-      });
+    let questions = [];
+    let current = 0;
+    let score = 0;
+    let correct = 0;
+    let incorrect = 0;
 
-    function renderQuestions() {
-      const container = document.getElementById("quiz-container");
-      container.innerHTML = "";
-      questions.forEach((q, i) => {
-        const html = `
-          <div class="question">
-            <h3>Q${i + 1}. ${q.question}</h3>
-            <div class="options">
-              ${q.options
-                .map(
-                  (opt) => `
-                <label><input type="radio" name="q${i}" value="${opt}" /> ${opt}</label>
-              `
-                )
-                .join("")}
-            </div>
-          </div>
-        `;
-        container.innerHTML += html;
+    function login() {
+      const name = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value;
+      if (students.includes(name) && pass === "12345") {
+        document.getElementById("login-box").classList.add("hidden");
+        document.getElementById("quiz-box").classList.remove("hidden");
+        loadQuestions();
+      } else {
+        alert("Invalid login. Try again.");
+      }
+    }
+
+    async function loadQuestions() {
+      const res = await fetch('questions.json');
+      questions = await res.json();
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = questions[current];
+      document.getElementById("question").innerText = `${current + 1}. ${q.question}`;
+      const optBox = document.getElementById("options");
+      optBox.innerHTML = '';
+      q.options.forEach((opt, index) => {
+        const btn = document.createElement("div");
+        btn.className = "option";
+        btn.innerText = opt;
+        btn.onclick = () => selectAnswer(index);
+        optBox.appendChild(btn);
       });
     }
 
-    function submitQuiz() {
-      let score = 0;
-      let correct = 0;
-      let wrong = 0;
-      questions.forEach((q, i) => {
-        const selected = document.querySelector(`input[name='q${i}']:checked`);
-        if (selected) {
-          if (selected.value === q.answer) {
-            score++;
-            correct++;
-          } else {
-            wrong++;
-          }
-        }
+    function selectAnswer(index) {
+      const selected = index;
+      const q = questions[current];
+      const allOptions = document.querySelectorAll(".option");
+      allOptions.forEach((btn, i) => {
+        btn.onclick = null;
+        if (i === q.answer) btn.classList.add("correct");
+        if (i === selected && selected !== q.answer) btn.classList.add("wrong");
       });
 
-      const result = document.getElementById("result");
-      result.innerHTML = `
-        <p><strong>Total Questions:</strong> ${questions.length}</p>
-        <p><strong>Correct:</strong> ${correct}</p>
-        <p><strong>Incorrect:</strong> ${wrong}</p>
-        <p><strong>Total Score:</strong> ${score}/${questions.length}</p>
-      `;
+      if (selected === q.answer) {
+        score += q.marks || 1;
+        correct++;
+      } else {
+        incorrect++;
+      }
+    }
 
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    function nextQuestion() {
+      if (current < questions.length - 1) {
+        current++;
+        showQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      document.getElementById("quiz-box").classList.add("hidden");
+      document.getElementById("result-box").classList.remove("hidden");
+      document.getElementById("result").innerHTML = `
+        Total Questions: ${questions.length}<br>
+        Correct: ${correct}<br>
+        Incorrect: ${incorrect}<br>
+        Score: ${score} / ${questions.length}
+      `;
     }
   </script>
 </body>
