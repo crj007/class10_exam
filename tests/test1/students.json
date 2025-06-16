@@ -1,15 +1,15 @@
 [
-  { "username": "aayush", "password": "12345" },
-  { "username": "arham", "password": "12345" },
-  { "username": "aryan", "password": "12345" },
-  { "username": "avikshit", "password": "12345" },
-  { "username": "ayush", "password": "12345" },
-  { "username": "jugaad", "password": "12345" },
-  { "username": "krishna", "password": "12345" },
-  { "username": "partha", "password": "12345" },
-  { "username": "prapti", "password": "12345" },
-  { "username": "saikripa", "password": "12345" },
-  { "username": "samriddhi", "password": "12345" },
-  { "username": "sanskriti", "password": "12345" },
-  { "username": "yash", "password": "12345" }
+  { "username": "Aayush", "password": "12345" },
+  { "username": "Arham", "password": "12345" },
+  { "username": "Aryan", "password": "12345" },
+  { "username": "Avikshit", "password": "12345" },
+  { "username": "Ayush", "password": "12345" },
+  { "username": "Jugaad", "password": "12345" },
+  { "username": "Krishna", "password": "12345" },
+  { "username": "Partha", "password": "12345" },
+  { "username": "Prapti", "password": "12345" },
+  { "username": "SaiKripa", "password": "12345" },
+  { "username": "Samriddhi", "password": "12345" },
+  { "username": "Sanskriti", "password": "12345" },
+  { "username": "Yash", "password": "12345" }
 ]
