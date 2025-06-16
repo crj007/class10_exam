@@ -1,152 +1,138 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Class 10 - Online Test</title>
+  <title>Test 1 - Computer Science</title>
+  <meta charset="UTF-8">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 30px;
     }
     .container {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px;
+      max-width: 700px;
+      margin: auto;
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    h2 {
-      text-align: center;
+    h1 {
       color: #2c3e50;
     }
     .question {
+      font-size: 1.2em;
       margin: 20px 0;
     }
     .options label {
       display: block;
-      margin-bottom: 8px;
-      cursor: pointer;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #2ecc71;
-      border: none;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    button:hover {
-      background-color: #27ae60;
-    }
-    .login-box {
-      text-align: center;
-      padding: 40px;
-    }
-    input[type="text"], input[type="password"] {
+      margin: 10px 0;
       padding: 10px;
-      width: 80%;
-      margin: 10px auto;
-      border-radius: 5px;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      display: block;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    .result {
-      text-align: center;
+    .options label:hover {
+      background-color: #ecf0f1;
+    }
+    .button {
       margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 1em;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #2980b9;
+    }
+    .score {
+      font-size: 1.4em;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <div class="container" id="app">
-    <div class="login-box" id="loginBox">
-      <h2>Class 10 CS - Test Login</h2>
-      <input type="text" id="username" placeholder="Enter First Name">
-      <input type="password" id="password" placeholder="Enter Password">
-      <button onclick="login()">Login</button>
-      <p id="loginError" style="color: red;"></p>
+  <div class="container">
+    <h1>Computer Science Test 1</h1>
+    <div id="quizBox">
+      <div id="questionBox"></div>
+      <form id="optionsForm" class="options"></form>
+      <button class="button" onclick="submitAnswer()">Submit</button>
     </div>
-
-    <div id="quizBox" style="display: none;">
-      <h2>Welcome, <span id="studentName"></span></h2>
-      <form id="quizForm"></form>
-      <button onclick="submitQuiz()">Submit</button>
-      <div class="result" id="resultBox"></div>
-    </div>
+    <div id="scoreBox" class="score" style="display:none;"></div>
   </div>
 
   <script>
-    let currentStudent = null;
+    const studentName = localStorage.getItem("studentName");
+    if (!studentName) {
+      window.location.href = "index.html";
+    }
+
     let questions = [];
+    let currentIndex = 0;
+    let correct = 0;
+    let incorrect = 0;
 
-    function login() {
-      const name = document.getElementById("username").value.trim().toLowerCase();
-      const password = document.getElementById("password").value.trim();
-
-      fetch('students.json')
-        .then(res => res.json())
-        .then(data => {
-          const student = data.find(s => s.name.toLowerCase() === name && s.password === password);
-          if (student) {
-            currentStudent = student;
-            document.getElementById("loginBox").style.display = "none";
-            document.getElementById("quizBox").style.display = "block";
-            document.getElementById("studentName").innerText = student.name;
-            loadQuestions();
-          } else {
-            document.getElementById("loginError").innerText = "Invalid username or password!";
-          }
-        })
-        .catch(err => {
-          console.error("Error loading student data:", err);
-        });
-    }
-
-    function loadQuestions() {
-      fetch('questions.json')
-        .then(res => res.json())
-        .then(data => {
-          questions = data;
-          const quizForm = document.getElementById("quizForm");
-          quizForm.innerHTML = '';
-          questions.forEach((q, i) => {
-            const div = document.createElement("div");
-            div.className = "question";
-            div.innerHTML = `<p><strong>Q${i + 1}. ${q.question}</strong></p>`;
-            q.options.forEach(opt => {
-              div.innerHTML += `
-                <div class="options">
-                  <label><input type="radio" name="q${i}" value="${opt}"> ${opt}</label>
-                </div>`;
-            });
-            quizForm.appendChild(div);
-          });
-        });
-    }
-
-    function submitQuiz() {
-      let score = 0;
-      let correct = 0;
-      let incorrect = 0;
-      questions.forEach((q, i) => {
-        const answer = document.querySelector(`input[name="q${i}"]:checked`);
-        if (answer && answer.value === q.answer) {
-          score++;
-          correct++;
-        } else {
-          incorrect++;
-        }
+    fetch("questions.json")
+      .then(res => res.json())
+      .then(data => {
+        questions = data;
+        showQuestion();
+      })
+      .catch(err => {
+        document.getElementById("quizBox").innerHTML = "Failed to load questions.";
       });
 
-      document.getElementById("resultBox").innerHTML = `
-        <h3>✅ Test Submitted</h3>
-        <p>Total Questions: ${questions.length}</p>
-        <p>Correct Answers: <strong>${correct}</strong></p>
-        <p>Incorrect Answers: <strong>${incorrect}</strong></p>
-        <p>Total Marks: <strong>${score}/${questions.length}</strong></p>
+    function showQuestion() {
+      if (currentIndex >= questions.length) {
+        document.getElementById("quizBox").style.display = "none";
+        document.getElementById("scoreBox").style.display = "block";
+        document.getElementById("scoreBox").innerHTML = `
+          <p>✅ Test Completed!</p>
+          <p><strong>Total Questions:</strong> ${questions.length}</p>
+          <p><strong>Correct:</strong> ${correct}</p>
+          <p><strong>Incorrect:</strong> ${incorrect}</p>
+        `;
+        return;
+      }
+
+      const q = questions[currentIndex];
+      document.getElementById("questionBox").innerHTML = `
+        <p class="question"><strong>Q${currentIndex + 1}:</strong> ${q.question}</p>
       `;
+
+      const optionsForm = document.getElementById("optionsForm");
+      optionsForm.innerHTML = "";
+      q.options.forEach((opt, idx) => {
+        const id = `opt${idx}`;
+        optionsForm.innerHTML += `
+          <label for="${id}">
+            <input type="radio" name="option" value="${opt}" id="${id}"> ${opt}
+          </label>
+        `;
+      });
+    }
+
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="option"]:checked');
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+      if (answer === questions[currentIndex].answer) {
+        correct++;
+      } else {
+        incorrect++;
+      }
+      currentIndex++;
+      showQuestion();
     }
   </script>
 </body>
