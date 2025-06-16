@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MCQ Test</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      padding: 40px;
+      text-align: center;
+    }
+    .question-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px #ccc;
+      width: 80%;
+      max-width: 600px;
+    }
+    .options label {
+      display: block;
+      margin: 10px 0;
+      text-align: left;
+      cursor: pointer;
+    }
+    button {
+      margin: 20px 10px 0;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #status {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="question-box">
+    <h3 id="question-number">Question</h3>
+    <p id="question-text"></p>
+    <form class="options" id="options-form"></form>
+    <div>
+      <button onclick="prevQuestion()" id="prev-btn" disabled>Previous</button>
+      <button onclick="nextQuestion()" id="next-btn">Next</button>
+    </div>
+    <div id="status"></div>
+  </div>
+
+  <script>
+    let questions = [];
+    let current = 0;
+    let answers = {};
+
+    const user = new URLSearchParams(window.location.search).get("user");
+    const roll = new URLSearchParams(window.location.search).get("roll");
+
+    fetch("questions.json")
+      .then(res => res.json())
+      .then(data => {
+        questions = data;
+        loadQuestion();
+      });
+
+    function loadQuestion() {
+      const q = questions[current];
+      document.getElementById("question-number").innerText = `Question ${current + 1} of ${questions.length}`;
+      document.getElementById("question-text").innerText = q.question;
+
+      const form = document.getElementById("options-form");
+      form.innerHTML = "";
+
+      q.options.forEach((opt, idx) => {
+        const id = `opt-${idx}`;
+        const isChecked = answers[current] === opt ? "checked" : "";
+        form.innerHTML += `
+          <label>
+            <input type="radio" name="option" value="${opt}" ${isChecked}>
+            ${opt}
+          </label>
+        `;
+      });
+
+      document.getElementById("prev-btn").disabled = current === 0;
+      document.getElementById("next-btn").innerText = current === questions.length - 1 ? "Submit" : "Next";
+    }
+
+    function nextQuestion() {
+      saveAnswer();
+
+      if (current < questions.length - 1) {
+        current++;
+        loadQuestion();
+      } else {
+        submitTest();
+      }
+    }
+
+    function prevQuestion() {
+      saveAnswer();
+      if (current > 0) {
+        current--;
+        loadQuestion();
+      }
+    }
+
+    function saveAnswer() {
+      const selected = document.querySelector("input[name='option']:checked");
+      if (selected) {
+        answers[current] = selected.value;
+      }
+    }
+
+    function submitTest() {
+      saveAnswer();
+
+      let score = 0;
+      for (let i = 0; i < questions.length; i++) {
+        if (answers[i] === questions[i].answer) {
+          score++;
+        }
+      }
+
+      document.body.innerHTML = `
+        <div class="question-box">
+          <h2>Thank you, ${user}!</h2>
+          <p>You scored ${score} out of ${questions.length}.</p>
+          <p>Roll No: ${roll}</p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
