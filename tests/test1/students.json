@@ -1,15 +1,15 @@
 [
-  { "roll": 1, "name": "Aayush", "password": "12345" },
-  { "roll": 2, "name": "Arham", "password": "12345" },
-  { "roll": 3, "name": "Aryan", "password": "12345" },
-  { "roll": 6, "name": "Avikshit", "password": "12345" },
-  { "roll": 4, "name": "Ayush", "password": "12345" },
-  { "roll": 10, "name": "Jugaad", "password": "12345" },
-  { "roll": 11, "name": "Krishna", "password": "12345" },
-  { "roll": 13, "name": "Partha", "password": "12345" },
-  { "roll": 14, "name": "Prapti", "password": "12345" },
-  { "roll": 17, "name": "SaiKripa", "password": "12345" },
-  { "roll": 18, "name": "Samriddhi", "password": "12345" },
-  { "roll": 20, "name": "Sanskriti", "password": "12345" },
-  { "roll": 22, "name": "Yash", "password": "12345" }
+  { "roll": 1, "name": "Aayush Dhirasaria", "password": "12345" },
+  { "roll": 2, "name": "Arham Zulfiquar", "password": "12345" },
+  { "roll": 3, "name": "Aryan Agarwalla", "password": "12345" },
+  { "roll": 6, "name": "Avikshit Aditya", "password": "12345" },
+  { "roll": 4, "name": "Ayush Roy", "password": "12345" },
+  { "roll": 10, "name": "Jugaad Singh", "password": "12345" },
+  { "roll": 11, "name": "Krishna Periwal", "password": "12345" },
+  { "roll": 13, "name": "Partha P Sharma", "password": "12345" },
+  { "roll": 14, "name": "Prapti Neog", "password": "12345" },
+  { "roll": 17, "name": "SaiKripa Roy", "password": "12345" },
+  { "roll": 18, "name": "Samriddhi Krori", "password": "12345" },
+  { "roll": 20, "name": "Sanskriti Dee Oleyman", "password": "12345" },
+  { "roll": 22, "name": "Yash Munot", "password": "12345" }
 ]
