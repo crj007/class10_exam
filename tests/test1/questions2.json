@@ -1,0 +1,202 @@
+[
+  {
+    "question": "What is the purpose of an IP address?",
+    "options": [
+      "To identify a device on a network",
+      "To encrypt data transmissions",
+      "To store website content",
+      "To measure internet speed"
+    ],
+    "answer": "To identify a device on a network"
+  },
+  {
+    "question": "Which of these is a private IP address range?",
+    "options": [
+      "192.168.0.0 to 192.168.255.255",
+      "200.100.50.0 to 200.100.50.255",
+      "100.50.25.0 to 100.50.25.255",
+      "150.150.0.0 to 150.150.255.255"
+    ],
+    "answer": "192.168.0.0 to 192.168.255.255"
+  },
+  {
+    "question": "What is the main difference between IPv4 and IPv6?",
+    "options": [
+      "IPv6 has a larger address space",
+      "IPv6 is slower but more secure",
+      "IPv4 uses hexadecimal notation",
+      "IPv6 cannot be used on the internet"
+    ],
+    "answer": "IPv6 has a larger address space"
+  },
+  {
+    "question": "Which type of software is an operating system?",
+    "options": [
+      "System software",
+      "Application software",
+      "Utility software",
+      "Malware"
+    ],
+    "answer": "System software"
+  },
+  {
+    "question": "What is the purpose of a web browser?",
+    "options": [
+      "To access and display web pages",
+      "To create HTML documents",
+      "To protect against viruses",
+      "To manage network connections"
+    ],
+    "answer": "To access and display web pages"
+  },
+  {
+    "question": "Which protocol is used to securely transfer web pages?",
+    "options": [
+      "HTTPS",
+      "FTP",
+      "HTTP",
+      "SMTP"
+    ],
+    "answer": "HTTPS"
+  },
+  {
+    "question": "What is the primary purpose of a firewall?",
+    "options": [
+      "To prevent unauthorized access to a network",
+      "To increase internet speed",
+      "To create wireless networks",
+      "To manage IP addresses"
+    ],
+    "answer": "To prevent unauthorized access to a network"
+  },
+  {
+    "question": "Which of these is a characteristic of cryptocurrency?",
+    "options": [
+      "Decentralized control",
+      "Issued by central banks",
+      "Physical coins and notes",
+      "Fixed exchange rates"
+    ],
+    "answer": "Decentralized control"
+  },
+  {
+    "question": "What technology is cryptocurrency based on?",
+    "options": [
+      "Blockchain",
+      "Cloud computing",
+      "Artificial intelligence",
+      "Quantum computing"
+    ],
+    "answer": "Blockchain"
+  },
+  {
+    "question": "Which of these is an example of application software?",
+    "options": [
+      "Word processor",
+      "Device driver",
+      "Operating system",
+      "Disk defragmenter"
+    ],
+    "answer": "Word processor"
+  },
+  {
+    "question": "What does DNS stand for in networking?",
+    "options": [
+      "Domain Name System",
+      "Data Network Service",
+      "Digital Naming Standard",
+      "Dynamic Network Solution"
+    ],
+    "answer": "Domain Name System"
+  },
+  {
+    "question": "Which of these is a risk of using public Wi-Fi?",
+    "options": [
+      "Data interception",
+      "Slower processor speed",
+      "Hardware failure",
+      "Software compatibility issues"
+    ],
+    "answer": "Data interception"
+  },
+  {
+    "question": "What is the purpose of a MAC address?",
+    "options": [
+      "To uniquely identify a network interface",
+      "To locate websites on the internet",
+      "To encrypt email messages",
+      "To compress data files"
+    ],
+    "answer": "To uniquely identify a network interface"
+  },
+  {
+    "question": "Which of these is NOT a type of malware?",
+    "options": [
+      "PDF reader",
+      "Virus",
+      "Trojan horse",
+      "Spyware"
+    ],
+    "answer": "PDF reader"
+  },
+  {
+    "question": "What is the main purpose of a VPN?",
+    "options": [
+      "To create a secure connection over a public network",
+      "To increase internet bandwidth",
+      "To block all incoming network traffic",
+      "To physically connect computers in a LAN"
+    ],
+    "answer": "To create a secure connection over a public network"
+  },
+  {
+    "question": "Which of these is a feature of open-source software?",
+    "options": [
+      "Source code is publicly available",
+      "It cannot be modified",
+      "It is always free of charge",
+      "It has no copyright restrictions"
+    ],
+    "answer": "Source code is publicly available"
+  },
+  {
+    "question": "What is the purpose of a cryptocurrency wallet?",
+    "options": [
+      "To store private keys for cryptocurrency transactions",
+      "To mine new cryptocurrency coins",
+      "To convert cryptocurrency to traditional currency",
+      "To regulate cryptocurrency markets"
+    ],
+    "answer": "To store private keys for cryptocurrency transactions"
+  },
+  {
+    "question": "Which protocol is used to send email?",
+    "options": [
+      "SMTP",
+      "HTTP",
+      "FTP",
+      "TCP"
+    ],
+    "answer": "SMTP"
+  },
+  {
+    "question": "What is the function of a router in a network?",
+    "options": [
+      "To forward data packets between networks",
+      "To connect devices within a LAN",
+      "To convert digital signals to analog",
+      "To store web pages for faster access"
+    ],
+    "answer": "To forward data packets between networks"
+  },
+  {
+    "question": "Which of these is an advantage of cloud computing?",
+    "options": [
+      "Access to files from any device with internet",
+      "Faster processing than local computers",
+      "Complete immunity from hacking",
+      "No need for internet connection"
+    ],
+    "answer": "Access to files from any device with internet"
+  }
+]
