@@ -1,202 +1,202 @@
 [
   {
-    "question": "What is the purpose of an IP address?",
+    "question": "What is the primary purpose of cyber security?",
     "options": [
-      "To identify a device on a network",
-      "To encrypt data transmissions",
-      "To store website content",
-      "To measure internet speed"
-    ],
-    "answer": "To identify a device on a network"
-  },
-  {
-    "question": "Which of these is a private IP address range?",
-    "options": [
-      "192.168.0.0 to 192.168.255.255",
-      "200.100.50.0 to 200.100.50.255",
-      "100.50.25.0 to 100.50.25.255",
-      "150.150.0.0 to 150.150.255.255"
-    ],
-    "answer": "192.168.0.0 to 192.168.255.255"
-  },
-  {
-    "question": "What is the main difference between IPv4 and IPv6?",
-    "options": [
-      "IPv6 has a larger address space",
-      "IPv6 is slower but more secure",
-      "IPv4 uses hexadecimal notation",
-      "IPv6 cannot be used on the internet"
-    ],
-    "answer": "IPv6 has a larger address space"
-  },
-  {
-    "question": "Which type of software is an operating system?",
-    "options": [
-      "System software",
-      "Application software",
-      "Utility software",
-      "Malware"
-    ],
-    "answer": "System software"
-  },
-  {
-    "question": "What is the purpose of a web browser?",
-    "options": [
-      "To access and display web pages",
-      "To create HTML documents",
-      "To protect against viruses",
-      "To manage network connections"
-    ],
-    "answer": "To access and display web pages"
-  },
-  {
-    "question": "Which protocol is used to securely transfer web pages?",
-    "options": [
-      "HTTPS",
-      "FTP",
-      "HTTP",
-      "SMTP"
-    ],
-    "answer": "HTTPS"
-  },
-  {
-    "question": "What is the primary purpose of a firewall?",
-    "options": [
-      "To prevent unauthorized access to a network",
       "To increase internet speed",
-      "To create wireless networks",
-      "To manage IP addresses"
+      "To protect systems and data from digital attacks",
+      "To block all internet access",
+      "To create stronger passwords"
     ],
-    "answer": "To prevent unauthorized access to a network"
+    "answer": "To protect systems and data from digital attacks"
   },
   {
-    "question": "Which of these is a characteristic of cryptocurrency?",
+    "question": "Which of the following is a common method used in brute-force attacks?",
     "options": [
-      "Decentralized control",
-      "Issued by central banks",
-      "Physical coins and notes",
-      "Fixed exchange rates"
+      "Sending phishing emails",
+      "Trying every possible password combination",
+      "Encrypting data",
+      "Using biometric authentication"
     ],
-    "answer": "Decentralized control"
+    "answer": "Trying every possible password combination"
   },
   {
-    "question": "What technology is cryptocurrency based on?",
+    "question": "What is the best way to protect against brute-force attacks?",
     "options": [
-      "Blockchain",
-      "Cloud computing",
-      "Artificial intelligence",
-      "Quantum computing"
+      "Using short passwords",
+      "Enabling two-factor authentication (2FA)",
+      "Sharing passwords with friends",
+      "Disabling firewalls"
     ],
-    "answer": "Blockchain"
+    "answer": "Enabling two-factor authentication (2FA)"
   },
   {
-    "question": "Which of these is an example of application software?",
+    "question": "What is data interception?",
     "options": [
-      "Word processor",
-      "Device driver",
-      "Operating system",
-      "Disk defragmenter"
+      "Deleting files accidentally",
+      "Stealing data by tapping into communication links",
+      "Sending spam emails",
+      "Creating strong passwords"
     ],
-    "answer": "Word processor"
+    "answer": "Stealing data by tapping into communication links"
   },
   {
-    "question": "What does DNS stand for in networking?",
+    "question": "Which encryption protocol is recommended for securing Wi-Fi networks?",
     "options": [
-      "Domain Name System",
-      "Data Network Service",
-      "Digital Naming Standard",
-      "Dynamic Network Solution"
-    ],
-    "answer": "Domain Name System"
-  },
-  {
-    "question": "Which of these is a risk of using public Wi-Fi?",
-    "options": [
-      "Data interception",
-      "Slower processor speed",
-      "Hardware failure",
-      "Software compatibility issues"
-    ],
-    "answer": "Data interception"
-  },
-  {
-    "question": "What is the purpose of a MAC address?",
-    "options": [
-      "To uniquely identify a network interface",
-      "To locate websites on the internet",
-      "To encrypt email messages",
-      "To compress data files"
-    ],
-    "answer": "To uniquely identify a network interface"
-  },
-  {
-    "question": "Which of these is NOT a type of malware?",
-    "options": [
-      "PDF reader",
-      "Virus",
-      "Trojan horse",
-      "Spyware"
-    ],
-    "answer": "PDF reader"
-  },
-  {
-    "question": "What is the main purpose of a VPN?",
-    "options": [
-      "To create a secure connection over a public network",
-      "To increase internet bandwidth",
-      "To block all incoming network traffic",
-      "To physically connect computers in a LAN"
-    ],
-    "answer": "To create a secure connection over a public network"
-  },
-  {
-    "question": "Which of these is a feature of open-source software?",
-    "options": [
-      "Source code is publicly available",
-      "It cannot be modified",
-      "It is always free of charge",
-      "It has no copyright restrictions"
-    ],
-    "answer": "Source code is publicly available"
-  },
-  {
-    "question": "What is the purpose of a cryptocurrency wallet?",
-    "options": [
-      "To store private keys for cryptocurrency transactions",
-      "To mine new cryptocurrency coins",
-      "To convert cryptocurrency to traditional currency",
-      "To regulate cryptocurrency markets"
-    ],
-    "answer": "To store private keys for cryptocurrency transactions"
-  },
-  {
-    "question": "Which protocol is used to send email?",
-    "options": [
-      "SMTP",
+      "WEP",
+      "WPA3",
       "HTTP",
-      "FTP",
-      "TCP"
+      "FTP"
     ],
-    "answer": "SMTP"
+    "answer": "WPA3"
   },
   {
-    "question": "What is the function of a router in a network?",
+    "question": "What is a Distributed Denial of Service (DDoS) attack?",
     "options": [
-      "To forward data packets between networks",
-      "To connect devices within a LAN",
-      "To convert digital signals to analog",
-      "To store web pages for faster access"
+      "A method to speed up websites",
+      "An attack that overloads a server with excessive requests",
+      "A type of encryption",
+      "A way to block spam emails"
     ],
-    "answer": "To forward data packets between networks"
+    "answer": "An attack that overloads a server with excessive requests"
   },
   {
-    "question": "Which of these is an advantage of cloud computing?",
+    "question": "Which of the following is NOT a sign of a DDoS attack?",
     "options": [
-      "Access to files from any device with internet",
-      "Faster processing than local computers",
-      "Complete immunity from hacking",
-      "No need for internet connection"
+      "Slow network performance",
+      "Inability to access certain websites",
+      "Receiving large amounts of spam emails",
+      "Fast internet speed"
     ],
-    "answer": "Access to files from any device with internet"
+    "answer": "Fast internet speed"
+  },
+  {
+    "question": "What is the main difference between viruses and worms?",
+    "options": [
+      "Viruses need a host program to run, while worms do not",
+      "Worms are harmless, while viruses are dangerous",
+      "Viruses spread through email, while worms spread through USB drives",
+      "Worms are a type of antivirus software"
+    ],
+    "answer": "Viruses need a host program to run, while worms do not"
+  },
+  {
+    "question": "How does a Trojan Horse malware typically spread?",
+    "options": [
+      "Through encrypted websites",
+      "Via email attachments or infected downloads",
+      "By increasing internet speed",
+      "Through automatic software updates"
+    ],
+    "answer": "Via email attachments or infected downloads"
+  },
+  {
+    "question": "What is the primary function of spyware?",
+    "options": [
+      "To encrypt files",
+      "To monitor user activities and steal information",
+      "To block phishing emails",
+      "To speed up computers"
+    ],
+    "answer": "To monitor user activities and steal information"
+  },
+  {
+    "question": "Which of the following is an example of ransomware?",
+    "options": [
+      "WannaCry",
+      "Google Chrome",
+      "Microsoft Word",
+      "Adobe Photoshop"
+    ],
+    "answer": "WannaCry"
+  },
+  {
+    "question": "What is phishing?",
+    "options": [
+      "A type of encryption",
+      "A method to block spam emails",
+      "Sending fake emails to trick users into revealing personal information",
+      "A way to speed up internet connections"
+    ],
+    "answer": "Sending fake emails to trick users into revealing personal information"
+  },
+  {
+    "question": "How can you prevent phishing attacks?",
+    "options": [
+      "Clicking on all email links",
+      "Using anti-phishing toolbars and checking for 'https://' in URLs",
+      "Sharing passwords with friends",
+      "Disabling firewalls"
+    ],
+    "answer": "Using anti-phishing toolbars and checking for 'https://' in URLs"
+  },
+  {
+    "question": "What is pharming?",
+    "options": [
+      "Redirecting users from genuine websites to fake ones",
+      "A type of antivirus software",
+      "A method to encrypt data",
+      "A way to block pop-up ads"
+    ],
+    "answer": "Redirecting users from genuine websites to fake ones"
+  },
+  {
+    "question": "Which of the following is a social engineering technique?",
+    "options": [
+      "Encrypting files",
+      "Sending fake IT support calls to trick users",
+      "Updating software automatically",
+      "Using strong passwords"
+    ],
+    "answer": "Sending fake IT support calls to trick users"
+  },
+  {
+    "question": "What is the purpose of a firewall?",
+    "options": [
+      "To block all internet access",
+      "To monitor and control incoming/outgoing network traffic",
+      "To delete files automatically",
+      "To increase computer speed"
+    ],
+    "answer": "To monitor and control incoming/outgoing network traffic"
+  },
+  {
+    "question": "Which authentication factor involves using a fingerprint?",
+    "options": [
+      "Something you know",
+      "Something you have",
+      "Something you are",
+      "Something you remember"
+    ],
+    "answer": "Something you are"
+  },
+  {
+    "question": "What is the purpose of SSL (Secure Sockets Layer)?",
+    "options": [
+      "To slow down websites",
+      "To encrypt data transmitted between a user and a web server",
+      "To block all internet traffic",
+      "To delete files automatically"
+    ],
+    "answer": "To encrypt data transmitted between a user and a web server"
+  },
+  {
+    "question": "How can you identify a secure website?",
+    "options": [
+      "By checking for 'http://' in the URL",
+      "By looking for a padlock icon in the browser",
+      "By disabling antivirus software",
+      "By using weak passwords"
+    ],
+    "answer": "By looking for a padlock icon in the browser"
+  },
+  {
+    "question": "What is the best practice for creating strong passwords?",
+    "options": [
+      "Using common words like 'password'",
+      "Mixing uppercase, lowercase, numbers, and symbols",
+      "Sharing passwords with friends",
+      "Using the same password for all accounts"
+    ],
+    "answer": "Mixing uppercase, lowercase, numbers, and symbols"
   }
 ]
