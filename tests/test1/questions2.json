@@ -1,202 +1,202 @@
 [
   {
-    "question": "What is the primary purpose of cyber security?",
+    "question": "Which component in an automated system is responsible for processing input from sensors and making decisions?",
     "options": [
-      "To increase internet speed",
-      "To protect systems and data from digital attacks",
-      "To block all internet access",
-      "To create stronger passwords"
+      "Actuator",
+      "Sensor",
+      "Microprocessor",
+      "ADC"
     ],
-    "answer": "To protect systems and data from digital attacks"
+    "answer": "Microprocessor"
   },
   {
-    "question": "Which of the following is a common method used in brute-force attacks?",
+    "question": "What is the primary function of an Analogue-Digital Converter (ADC) in an automated system?",
     "options": [
-      "Sending phishing emails",
-      "Trying every possible password combination",
-      "Encrypting data",
-      "Using biometric authentication"
+      "To convert digital signals into physical movements",
+      "To convert analogue data into digital format",
+      "To store sensor data",
+      "To power the actuators"
     ],
-    "answer": "Trying every possible password combination"
+    "answer": "To convert analogue data into digital format"
   },
   {
-    "question": "What is the best way to protect against brute-force attacks?",
+    "question": "In self-parking cars, what role do actuators play?",
     "options": [
-      "Using short passwords",
-      "Enabling two-factor authentication (2FA)",
-      "Sharing passwords with friends",
-      "Disabling firewalls"
+      "Detect parking spaces",
+      "Control steering, brakes, and throttle",
+      "Calculate space size",
+      "Display parking instructions"
     ],
-    "answer": "Enabling two-factor authentication (2FA)"
+    "answer": "Control steering, brakes, and throttle"
   },
   {
-    "question": "What is data interception?",
+    "question": "What is a key advantage of automated irrigation systems in agriculture?",
     "options": [
-      "Deleting files accidentally",
-      "Stealing data by tapping into communication links",
-      "Sending spam emails",
-      "Creating strong passwords"
+      "Higher labor costs",
+      "Precise water use optimization",
+      "Increased manual checks",
+      "Reduced crop yield"
     ],
-    "answer": "Stealing data by tapping into communication links"
+    "answer": "Precise water use optimization"
   },
   {
-    "question": "Which encryption protocol is recommended for securing Wi-Fi networks?",
+    "question": "Which sensor is commonly used in gaming devices to detect tilting movements?",
     "options": [
-      "WEP",
-      "WPA3",
-      "HTTP",
-      "FTP"
+      "Proximity sensor",
+      "Accelerometer",
+      "Light sensor",
+      "Temperature sensor"
     ],
-    "answer": "WPA3"
+    "answer": "Accelerometer"
   },
   {
-    "question": "What is a Distributed Denial of Service (DDoS) attack?",
+    "question": "What is the purpose of haptic feedback in gaming controllers?",
     "options": [
-      "A method to speed up websites",
-      "An attack that overloads a server with excessive requests",
-      "A type of encryption",
-      "A way to block spam emails"
+      "To display visual effects",
+      "To provide physical vibrations for realism",
+      "To emit sound alerts",
+      "To charge the device"
     ],
-    "answer": "An attack that overloads a server with excessive requests"
+    "answer": "To provide physical vibrations for realism"
   },
   {
-    "question": "Which of the following is NOT a sign of a DDoS attack?",
+    "question": "How do automated lighting systems contribute to energy efficiency?",
     "options": [
-      "Slow network performance",
-      "Inability to access certain websites",
-      "Receiving large amounts of spam emails",
-      "Fast internet speed"
+      "By keeping lights on at all times",
+      "By using only wired connections",
+      "By turning lights on only when needed",
+      "By increasing bulb brightness"
     ],
-    "answer": "Fast internet speed"
+    "answer": "By turning lights on only when needed"
   },
   {
-    "question": "What is the main difference between viruses and worms?",
+    "question": "What is a disadvantage of wireless automated lighting systems?",
     "options": [
-      "Viruses need a host program to run, while worms do not",
-      "Worms are harmless, while viruses are dangerous",
-      "Viruses spread through email, while worms spread through USB drives",
-      "Worms are a type of antivirus software"
+      "Lower initial setup cost",
+      "More reliable than wired systems",
+      "May be less reliable than wired systems",
+      "No maintenance required"
     ],
-    "answer": "Viruses need a host program to run, while worms do not"
+    "answer": "May be less reliable than wired systems"
   },
   {
-    "question": "How does a Trojan Horse malware typically spread?",
+    "question": "In automated laboratory experiments, what does a colorimeter detect?",
     "options": [
-      "Through encrypted websites",
-      "Via email attachments or infected downloads",
-      "By increasing internet speed",
-      "Through automatic software updates"
+      "Temperature changes",
+      "Liquid levels",
+      "Color changes in reactions",
+      "Humidity levels"
     ],
-    "answer": "Via email attachments or infected downloads"
+    "answer": "Color changes in reactions"
   },
   {
-    "question": "What is the primary function of spyware?",
+    "question": "What is a major safety advantage of automated chemical processes in labs?",
     "options": [
-      "To encrypt files",
-      "To monitor user activities and steal information",
-      "To block phishing emails",
-      "To speed up computers"
+      "Increased exposure to hazardous chemicals",
+      "Reduced exposure to hazardous chemicals",
+      "Slower reaction times",
+      "More manual handling"
     ],
-    "answer": "To monitor user activities and steal information"
+    "answer": "Reduced exposure to hazardous chemicals"
   },
   {
-    "question": "Which of the following is an example of ransomware?",
+    "question": "Which of the following is NOT a component of an automated weather station?",
     "options": [
-      "WannaCry",
-      "Google Chrome",
-      "Microsoft Word",
-      "Adobe Photoshop"
+      "Rain bucket",
+      "Light sensor",
+      "Microprocessor",
+      "Steering wheel"
     ],
-    "answer": "WannaCry"
+    "answer": "Steering wheel"
   },
   {
-    "question": "What is phishing?",
+    "question": "What is the role of AI in automated systems?",
     "options": [
-      "A type of encryption",
-      "A method to block spam emails",
-      "Sending fake emails to trick users into revealing personal information",
-      "A way to speed up internet connections"
+      "To slow down data processing",
+      "To identify patterns in large datasets",
+      "To replace all human jobs",
+      "To eliminate the need for sensors"
     ],
-    "answer": "Sending fake emails to trick users into revealing personal information"
+    "answer": "To identify patterns in large datasets"
   },
   {
-    "question": "How can you prevent phishing attacks?",
+    "question": "Why might an automated weather station provide incorrect data?",
     "options": [
-      "Clicking on all email links",
-      "Using anti-phishing toolbars and checking for 'https://' in URLs",
-      "Sharing passwords with friends",
-      "Disabling firewalls"
+      "Due to excessive human intervention",
+      "Because it lacks sensors",
+      "If snow is forecast but does not arrive",
+      "When it is powered off"
     ],
-    "answer": "Using anti-phishing toolbars and checking for 'https://' in URLs"
+    "answer": "If snow is forecast but does not arrive"
   },
   {
-    "question": "What is pharming?",
+    "question": "What is a social disadvantage of sensor-based gaming devices?",
     "options": [
-      "Redirecting users from genuine websites to fake ones",
-      "A type of antivirus software",
-      "A method to encrypt data",
-      "A way to block pop-up ads"
+      "Increased social interaction",
+      "Decreased social interaction",
+      "Improved teamwork",
+      "Enhanced communication"
     ],
-    "answer": "Redirecting users from genuine websites to fake ones"
+    "answer": "Decreased social interaction"
   },
   {
-    "question": "Which of the following is a social engineering technique?",
+    "question": "How does adaptive cruise control (ACC) improve driving safety?",
     "options": [
-      "Encrypting files",
-      "Sending fake IT support calls to trick users",
-      "Updating software automatically",
-      "Using strong passwords"
+      "By removing the need for brakes",
+      "By maintaining a safe distance from the car ahead",
+      "By increasing speed unpredictably",
+      "By disabling the steering wheel"
     ],
-    "answer": "Sending fake IT support calls to trick users"
+    "answer": "By maintaining a safe distance from the car ahead"
   },
   {
-    "question": "What is the purpose of a firewall?",
+    "question": "What is a potential risk of over-reliance on autonomous vehicles?",
     "options": [
-      "To block all internet access",
-      "To monitor and control incoming/outgoing network traffic",
-      "To delete files automatically",
-      "To increase computer speed"
+      "Drivers may lose manual driving skills",
+      "Increased fuel consumption",
+      "More traffic accidents",
+      "Higher insurance costs"
     ],
-    "answer": "To monitor and control incoming/outgoing network traffic"
+    "answer": "Drivers may lose manual driving skills"
   },
   {
-    "question": "Which authentication factor involves using a fingerprint?",
+    "question": "Which of the following is a hardware component NOT typically found in an automated system?",
     "options": [
-      "Something you know",
-      "Something you have",
-      "Something you are",
-      "Something you remember"
+      "Sensor",
+      "Microprocessor",
+      "Actuator",
+      "Printer"
     ],
-    "answer": "Something you are"
+    "answer": "Printer"
   },
   {
-    "question": "What is the purpose of SSL (Secure Sockets Layer)?",
+    "question": "What is the primary purpose of a microprocessor in an automated system?",
     "options": [
-      "To slow down websites",
-      "To encrypt data transmitted between a user and a web server",
-      "To block all internet traffic",
-      "To delete files automatically"
+      "To collect data from the environment",
+      "To convert electrical signals into physical movements",
+      "To process input and send instructions to actuators",
+      "To store data long-term"
     ],
-    "answer": "To encrypt data transmitted between a user and a web server"
+    "answer": "To process input and send instructions to actuators"
   },
   {
-    "question": "How can you identify a secure website?",
+    "question": "In an automated laboratory experiment, what happens if the level sensors detect insufficient liquid?",
     "options": [
-      "By checking for 'http://' in the URL",
-      "By looking for a padlock icon in the browser",
-      "By disabling antivirus software",
-      "By using weak passwords"
+      "The microprocessor ignores the data",
+      "The actuator adjusts the burette tap to add more liquid",
+      "The experiment stops immediately",
+      "The colorimeter shuts down"
     ],
-    "answer": "By looking for a padlock icon in the browser"
+    "answer": "The actuator adjusts the burette tap to add more liquid"
   },
   {
-    "question": "What is the best practice for creating strong passwords?",
+    "question": "What is a significant challenge of implementing AI in automated systems?",
     "options": [
-      "Using common words like 'password'",
-      "Mixing uppercase, lowercase, numbers, and symbols",
-      "Sharing passwords with friends",
-      "Using the same password for all accounts"
+      "AI requires no training data",
+      "Dependence on biased or incomplete training data",
+      "AI cannot process large datasets",
+      "AI eliminates the need for hardware"
     ],
-    "answer": "Mixing uppercase, lowercase, numbers, and symbols"
+    "answer": "Dependence on biased or incomplete training data"
   }
 ]
