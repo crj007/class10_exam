@@ -1,202 +1,182 @@
 [
   {
-    "question": "What is an automated system?",
+    "question": "What is the decimal equivalent of the binary number 1011?",
     "options": [
-      "A system that requires constant human intervention",
-      "A combination of software and hardware designed to work without human intervention",
-      "A manual process controlled by humans",
-      "A system that only uses software"
-    ],
-    "answer": "A combination of software and hardware designed to work without human intervention"
+      "11",
+      "13",
+      "9",
+      "7"
+    ]
   },
   {
-    "question": "Which component converts analogue data into digital format in an automated system?",
+    "question": "What is the binary equivalent of the decimal number 15?",
     "options": [
-      "Microprocessor",
-      "Actuator",
-      "Analogue-Digital Converter (ADC)",
-      "Sensor"
-    ],
-    "answer": "Analogue-Digital Converter (ADC)"
+      "1110",
+      "1111",
+      "1010",
+      "1100"
+    ]
   },
   {
-    "question": "What is the role of an actuator in an automated system?",
+    "question": "Which of the following is an example of an input device?",
     "options": [
-      "To process data from sensors",
-      "To convert electrical signals into physical outputs",
-      "To measure environmental conditions",
-      "To store data"
-    ],
-    "answer": "To convert electrical signals into physical outputs"
+      "Monitor",
+      "Printer",
+      "Speaker",
+      "Keyboard"
+    ]
   },
   {
-    "question": "Which of the following is an application of automated systems in transport?",
+    "question": "What is the purpose of an actuator in a sensor-based system?",
     "options": [
-      "Automatic irrigation",
-      "Self-parking cars",
-      "Weather monitoring",
-      "Gaming controllers"
-    ],
-    "answer": "Self-parking cars"
+      "To process data from the sensor",
+      "To convert a digital signal to analog",
+      "To output a physical action based on a signal",
+      "To store data from the sensor"
+    ]
   },
   {
-    "question": "How do self-parking cars determine the size of a parking space?",
+    "question": "Which number system uses base 16?",
     "options": [
-      "By asking the driver",
-      "Using signal reflection time (3D mapping)",
-      "By guessing randomly",
-      "Using manual measurements"
-    ],
-    "answer": "Using signal reflection time (3D mapping)"
+      "Binary",
+      "Decimal",
+      "Hexadecimal",
+      "Octal"
+    ]
   },
   {
-    "question": "What is a disadvantage of self-parking cars?",
+    "question": "What is the hexadecimal digit 'F' equivalent to in denary?",
     "options": [
-      "They are inexpensive to maintain",
-      "Drivers may lose parking skills",
-      "They cannot detect obstacles",
-      "They require no sensors"
-    ],
-    "answer": "Drivers may lose parking skills"
+      "15",
+      "16",
+      "17",
+      "14"
+    ]
   },
   {
-    "question": "What does Adaptive Cruise Control (ACC) use to measure distance to the car ahead?",
+    "question": "Which data transmission method sends multiple bits simultaneously?",
     "options": [
-      "Ultrasonic sensors",
-      "Laser sensors",
-      "Infrared cameras",
-      "Microphones"
-    ],
-    "answer": "Laser sensors"
+      "Serial Transmission",
+      "Parallel Transmission",
+      "Synchronous Transmission",
+      "Asynchronous Transmission"
+    ]
   },
   {
-    "question": "What is a key benefit of Adaptive Cruise Control (ACC)?",
+    "question": "What is a key disadvantage of parallel data transmission over long distances?",
     "options": [
-      "Increases driver fatigue",
-      "Reduces driver fatigue in traffic",
-      "Makes driving more dangerous",
-      "Requires constant manual adjustments"
-    ],
-    "answer": "Reduces driver fatigue in traffic"
+      "It is too slow",
+      "It requires too much power",
+      "Data skew can occur",
+      "It is less secure"
+    ]
   },
   {
-    "question": "In agriculture, what do sensors detect for automatic harvesting?",
+    "question": "Which type of sensor would be used to detect light levels?",
     "options": [
-      "Optimal times for harvesting based on weather conditions",
-      "The color of crops",
-      "The taste of crops",
-      "The size of the farm"
-    ],
-    "answer": "Optimal times for harvesting based on weather conditions"
+      "Temperature Sensor",
+      "Pressure Sensor",
+      "Light Sensor",
+      "Humidity Sensor"
+    ]
   },
   {
-    "question": "What is a disadvantage of automated irrigation systems?",
+    "question": "What does ADC stand for?",
     "options": [
-      "Low cost of setup",
-      "Blocked channels may go undetected",
-      "No need for human oversight",
-      "Inefficient water use"
-    ],
-    "answer": "Blocked channels may go undetected"
+      "Analog Digital Calculator",
+      "Analog to Digital Converter",
+      "Automatic Data Controller",
+      "Advanced Data Chip"
+    ]
   },
   {
-    "question": "What is the purpose of automated weather stations at airports?",
+    "question": "What is the main function of the CPU?",
     "options": [
-      "To predict poor flying and landing conditions",
-      "To control air traffic",
-      "To clean runways",
-      "To refuel airplanes"
-    ],
-    "answer": "To predict poor flying and landing conditions"
+      "To provide permanent storage",
+      "To display output to the user",
+      "To process data and instructions",
+      "To connect to the internet"
+    ]
   },
   {
-    "question": "How do automated weather stations measure rainfall?",
+    "question": "Which of the following is a secondary storage device?",
     "options": [
-      "By counting raindrops",
-      "Using a tipping rain bucket",
-      "By asking pilots",
-      "Using manual measurements"
-    ],
-    "answer": "Using a tipping rain bucket"
+      "RAM",
+      "ROM",
+      "CPU Cache",
+      "Hard Disk Drive (HDD)"
+    ]
   },
   {
-    "question": "What type of feedback do actuators provide in gaming controllers?",
+    "question": "What is the purpose of a check digit?",
     "options": [
-      "Visual feedback",
-      "Haptic feedback (vibration)",
-      "Audio feedback",
-      "No feedback"
-    ],
-    "answer": "Haptic feedback (vibration)"
+      "To encrypt data for security",
+      "To increase transmission speed",
+      "To verify the accuracy of entered data",
+      "To convert analog signals to digital"
+    ]
   },
   {
-    "question": "What is a disadvantage of sensor-based gaming devices?",
+    "question": "Which output device produces a physical, hard copy of data?",
     "options": [
-      "They are inexpensive",
-      "They have slow battery drain",
-      "They can cause physical movement fatigue",
-      "They require no maintenance"
-    ],
-    "answer": "They can cause physical movement fatigue"
+      "Monitor",
+      "Projector",
+      "Speaker",
+      "Printer"
+    ]
   },
   {
-    "question": "What do light sensors detect in automated lighting systems?",
+    "question": "What is the binary result of the bitwise shift RIGHT operation on 1010 (by one place)?",
     "options": [
-      "Sound levels",
-      "Ambient light levels",
-      "Temperature",
-      "Humidity"
-    ],
-    "answer": "Ambient light levels"
+      "0100",
+      "0101",
+      "1100",
+      "1001"
+    ]
   },
   {
-    "question": "What is an advantage of automated lighting systems?",
+    "question": "In data transmission, what is the role of a parity bit?",
     "options": [
-      "Higher energy consumption",
-      "Reduced energy consumption",
-      "Shorter bulb life",
-      "More trailing wires"
-    ],
-    "answer": "Reduced energy consumption"
+      "To increase the speed of transmission",
+      "To encrypt the data being sent",
+      "To perform simple error detection",
+      "To act as the clock signal"
+    ]
   },
   {
-    "question": "In automated laboratory experiments, what do actuators control?",
+    "question": "Which component is often referred to as the 'brain' of the computer?",
     "options": [
-      "Heaters, coolers, or water supplies",
-      "Microprocessors",
-      "Sensors",
-      "Data storage"
-    ],
-    "answer": "Heaters, coolers, or water supplies"
+      "GPU (Graphics Processing Unit)",
+      "ALU (Arithmetic Logic Unit)",
+      "CPU (Central Processing Unit)",
+      "RAM (Random Access Memory)"
+    ]
   },
   {
-    "question": "What is an advantage of automated chemical processes in labs?",
+    "question": "What is the two's complement representation of -6 in a 4-bit system?",
     "options": [
-      "Less consistent results",
-      "Increased exposure to hazardous chemicals",
-      "Highly repeatable results",
-      "Slower experiments"
-    ],
-    "answer": "Highly repeatable results"
+      "1001",
+      "1010",
+      "1110",
+      "1000"
+    ]
   },
   {
-    "question": "What is a disadvantage of automated laboratory experiments?",
+    "question": "Which type of memory is volatile?",
     "options": [
-      "Faster detection of errors",
-      "Immediate human intervention",
-      "Delayed discovery of issues",
-      "No need for monitoring"
-    ],
-    "answer": "Delayed discovery of issues"
+      "ROM",
+      "Flash Memory",
+      "RAM",
+      "HDD"
+    ]
   },
   {
-    "question": "What is an advantage of AI in automated systems?",
+    "question": "A barcode reader is an example of what?",
     "options": [
-      "Slow data processing",
-      "Inability to recognize patterns",
-      "Processes vast datasets quickly",
-      "Requires no training data"
-    ],
-    "answer": "Processes vast datasets quickly"
+      "An output device",
+      "A sensor",
+      "An input device",
+      "An actuator"
+    ]
   }
 ]
